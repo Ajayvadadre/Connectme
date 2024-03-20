@@ -1,0 +1,129 @@
+.connectme__header {
+  @include center__element;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid black;
+  &-signup{
+    .box{
+      padding: 1rem;
+      @include center__element;
+      width: 10rem;
+      @include box_color;
+      background-color: $primary-color !important;
+      border-radius: 5px;
+      color: white !important;
+
+      @include click_font;
+      cursor: pointer;
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &-icon {
+    img {
+      width: 13rem;
+
+      @media screen and (max-width: 750px) {
+        width: 10rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    &-signup {
+      .box {
+        padding: 0.6rem;
+        // background-color: black !important;
+        // color: $primary-color !important;
+        width: 7rem;
+      }
+    }
+  }
+}
+
+.connectme__home {
+  @include center__element;
+  margin-top: 5rem;
+
+  &-profile {
+    padding: 1rem;
+    background: $primary-color;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+
+.connectme__user-update__once {
+  padding: 2rem 1rem;
+  &-title {
+    @include center__element;
+    text-align: center;
+    justify-content: space-between;
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+  .border {
+    width: 100%;
+    height: 0.15rem;
+    background-color: black;
+  }
+  &-content {
+    padding: 2rem;
+    @include center__element;
+
+    .personal__form {
+      padding: 2rem;
+      // width: 100%;
+      width: 28rem;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgb(200 204 211 / 75%);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      &-item {
+        @include center__element;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+      .submit {
+        margin-top: 2rem;
+        @include center__element;
+        button {
+          padding: 1rem 2rem;
+          border-radius: 5px;
+          background: black;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.7rem;
+
+    &-content {
+        width: 100%;
+      padding: 1rem 0;
+    }
+  }
+}
+
+
+.not__verified{
+  @include center__element;
+  height: 75vh;
+  .box{
+    width: 20rem;
+    background:$primary-color;
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 10px;
+
+  }
+}

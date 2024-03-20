@@ -1,0 +1,280 @@
+.connectme__login {
+  // margin: 5rem 1rem;
+  // border: 2px solid black;
+  @include center__element;
+  justify-content: space-between;
+
+
+  .left {
+    height: 100vh;
+    width: 45rem;
+
+    svg {
+      width: 100%;
+    }
+
+    &__center {
+
+      @media screen and (max-width:1000px) {
+
+        height: 100%;
+        @include center__element;
+        flex-direction: column;
+      }
+    }
+
+    background-color: black;
+  }
+
+  .right {
+    padding: 0 1rem;
+
+    @media screen and (min-width:1350px) {
+      margin-right: 10rem;
+    }
+
+    @media screen and (max-width:500px) {
+      width: 100%;
+    }
+
+  }
+
+  @media screen and (max-width:800px) {
+    flex-direction: column;
+
+    .left {
+      background: none;
+      width: 100%;
+      height: auto;
+
+    }
+  }
+
+  &-intro {
+    @include center__element;
+    flex-direction: column;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      @include click_font;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+  }
+
+  &-content {
+    margin-top: 5rem;
+    @include center__element;
+    flex-direction: column;
+
+    &__manual {
+      @include center__element;
+      flex-direction: column;
+      width: 26rem;
+
+      @media screen and (max-width: 470px) {
+        width: 100%;
+      }
+
+      span {
+        color: red;
+        font-size: .8rem
+      }
+
+      input {
+        // width: 10rem;
+        @include click_font;
+      }
+
+      &>* {
+        margin-bottom: 1rem;
+      }
+
+      .email,
+      .password {
+        width: 100%;
+
+        span {
+          color: red;
+          font-size: .8rem
+        }
+      }
+
+      .name {
+        @include center__element;
+
+        span {
+          color: red;
+          font-size: .8rem;
+        }
+
+        &__firstname {
+          margin-right: 1rem;
+        }
+      }
+
+      button.submit {
+        @include click_font;
+        padding: 1rem;
+        border-radius: 5px;
+        width: 100%;
+        @include box_color;
+        @include center__element;
+      }
+    }
+  }
+
+  &-model {
+    @include center__element;
+    top: 0;
+    z-index: 1;
+    transform: translate(0, 0%) !important;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    .cross {
+      position: absolute;
+
+      top: 1rem;
+      left: 21rem;
+      right: 1rem;
+      bottom: 18rem;
+
+      svg {
+        z-index: 2;
+        font-size: 1.7rem
+      }
+
+      @include center__element;
+      flex-direction: column;
+      color: white;
+
+    }
+
+    &__data {
+      padding: 1.5rem;
+      margin: 5rem;
+      position: relative;
+      top: 0;
+      left: 0;
+      @include center__element;
+      flex-direction: column;
+      width: 23rem;
+      border-radius: 10px;
+      height: 20rem;
+      background-color: black;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+
+      span {
+        color: red;
+      }
+
+      fieldset {
+        border-color: white;
+      }
+
+      input {
+        color: white;
+      }
+
+      label {
+        color: white;
+      }
+
+      .username {
+        width: 20rem;
+      }
+
+      .google {
+        position: absolute;
+        margin-top: 10rem;
+        @include click_font;
+        @include center__element;
+        padding: 1rem;
+        width: 20rem;
+
+        border-radius: 5px;
+        background: white;
+        color: black;
+      }
+
+      @media screen and (max-width:500px) {
+        margin: 2rem 1rem;
+
+        .username {
+          width: 100%;
+
+        }
+
+        .google {
+          width: 90%;
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 430px) {
+    &-content {
+      margin-top: 3.5rem;
+    }
+  }
+
+  .divider {
+    @include center__element;
+  }
+
+  .auth {
+    margin-top: 0.8rem;
+    @include center__element;
+    flex-direction: column;
+    width: 24rem;
+
+    @media screen and (max-width: 470px) {
+      width: 100%;
+    }
+
+    .google {
+      @include click_font;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      @include center__element;
+
+      svg {
+        font-size: 1.9rem;
+        margin-right: 1rem;
+      }
+
+      color: black;
+      background: white;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+
+    margin: 0;
+
+    &-intro {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
