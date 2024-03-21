@@ -258,6 +258,7 @@ const Edit = ({ modal, data, isLoading, usetextarea = false, state, multiple = f
                     ) : (
 
                         <form onSubmit={handleSub}>
+                            <h1 style={{color:"black", marginBottom:"3rem"}}>Edit about</h1>
                             <div className="content">
                                 {usetextarea ? (
                                     <textarea rows={7} defaultValue={data?.data} name={data?.name} onChange={handleChange} />

@@ -101,7 +101,7 @@ const Port = ({ data, title, link = "", edit, openEditHandler }) => {
                 )}
             </div>
             <motion.div className="connectme__user-services__content" >
-                <Swiper loop={false} slidesPerView={1} breakpoints={breakpoint} spaceBetween={50} autoplay speed={600} modules={[Autoplay]}>
+                {/* <Swiper loop={false} slidesPerView={1} breakpoints={breakpoint} spaceBetween={50} autoplay speed={600} modules={[Autoplay]}> */}
                     {newData?.map((d, i) => (
                         <SwiperSlide key={d._id}>
                             <motion.div className="image" whileHover={{ scale: !edit && 1.1 }} onClick={() => {
@@ -126,7 +126,7 @@ const Port = ({ data, title, link = "", edit, openEditHandler }) => {
                             </motion.div>
                         </SwiperSlide>
                     ))}
-                </Swiper>
+                {/* </Swiper> */}
             </motion.div>
             {
                 data?.length > 5 && (
@@ -134,7 +134,7 @@ const Port = ({ data, title, link = "", edit, openEditHandler }) => {
                     <div className="connectme__user-services__more" >
                         <Link href={`/${link}&edit=${edit}`} passHref>
                             <motion.div className="" initial={{ x: -300, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} whileHover={{ scale: 1.1, x: 10 }}  >
-                                <p style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "1rem", cursor: "pointer" }}>Explore More <IoIosArrowForward size={20} /> </p>
+                                <p style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "1rem", cursor: "pointer" }}> More <IoIosArrowForward size={20} /> </p>
                             </motion.div>
                         </Link>
                     </div>

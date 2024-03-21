@@ -18,8 +18,9 @@ import { FiEdit } from "react-icons/fi";
 import Image from "next/image";
 import PopModal from "../modal/Popup";
 import logo from "../../images/Logos/logo.png";
+import { BsPersonCircle } from "react-icons/bs";
 
-const Footer = ({ edit, setShare, setShowRequesList, setSearchBar, view }) => {
+const Footer = ({ edit, setShare, setShowRequesList, setSearchBar, view, likeHandler }) => {
   const router = useRouter();
   const state = useSelector((state) => state);
   const { profileReducer } = state;
@@ -59,13 +60,14 @@ const Footer = ({ edit, setShare, setShowRequesList, setSearchBar, view }) => {
                     <AiOutlineSearch className="nav-icons"/>
                 </motion.div>
 
-                <motion.div className="connectme__footer-like nav-icons" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }} onClick={() => setSearchBar(true)}>
+
+                <motion.div className="connectme__footer-like nav-icons" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }} onClick={() => likeHandler}>
                     <AiOutlineHeart />
                 </motion.div>
 
                 <motion.div className="connectme__footer-notification nav-icons" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }} onClick={() => setSearchBar(true)}>
                     <AiOutlineBell />
-                </motion.div>
+                </motion.div> 
                 {!view && (
                     <motion.div className="connectme__footer-view nav-icons" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }} onClick={editHandler} >
                         {edit ? (
@@ -95,11 +97,11 @@ const Footer = ({ edit, setShare, setShowRequesList, setSearchBar, view }) => {
                 {
                     !view ? (
                         <motion.div className="connectme__footer-logout" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }} onClick={() => setpopUpModal(true)}>
-                            <RiLogoutCircleRFill color='red' />
+                            <BsPersonCircle color='' />
                         </motion.div>
                     ) : (
                         <motion.div className="connectme__footer-logout" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }} onClick={() => router.push("/login")}>
-                            <AiOutlineLogin color='' />
+                            <BsPersonCircle color='' />
                         </motion.div>
                     )
                 }

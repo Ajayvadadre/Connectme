@@ -9,6 +9,9 @@ import PerosnalImg from '../../images/mascots/person.jpg'
 import DocumentImg from '../../images/mascots/Documentation.png'  
 import createProfileImage from '../../images/mascots/Create-profile.png'  
 import footerIcon from '../../images/Logos/image.webp'  
+import badge from '../../images/badges/SkillsBadge.png'
+import { GrEdit } from "react-icons/gr";
+
  
 import {
   deleteSubDocInProfileById,
@@ -58,7 +61,7 @@ const Audition = dynamic(() => import("./subcomponents/Audition"));
 const Port = dynamic(() => import("./subcomponents/Port"));
 const Testimonial = dynamic(() => import("./subcomponents/Testimonial"));
 
-const User = ({ edit }) => {
+const User = ({ edit  }) => {
   const [width, setWidth] = useState(1000);
   const state = useSelector((state) => state);
   const [bannerHeight, setBannerHeight] = useState(0);
@@ -510,10 +513,14 @@ const User = ({ edit }) => {
 
   const likeHandler = () => {
     const data = JSON.parse(localStorage.getItem("UserAuth"))?.existingUser;
-
     dispatch(likeProfile(profileData?._id, data?._id));
   };
-
+  const likeButtonClickHandler = () => {
+    if (likeHandler) {
+      likeHandler(); // Invoke the likeHandler function passed from the Layout component
+    }
+  };
+  
   const deleteSubDoc = (id, item) => {
     const user = JSON.parse(localStorage.getItem("UserAuth"))?.existingUser;
     dispatch(
@@ -558,7 +565,7 @@ const User = ({ edit }) => {
               )
             }
           >
-            <FaEdit />
+            <GrEdit />
           </div>
         )}
         {d.item}
@@ -630,7 +637,7 @@ const User = ({ edit }) => {
                 }}
                 whileTap={{ scale: 1.1 }}
               >
-                <FaEdit />
+                <GrEdit />
               </motion.div>
             )}
           </motion.div>
@@ -660,7 +667,7 @@ const User = ({ edit }) => {
                 }}
                 whileTap={{ scale: 1.1 }}
               >
-                <FaEdit />
+                <GrEdit />
               </motion.div>
             )}
             
@@ -688,7 +695,7 @@ const User = ({ edit }) => {
                     }
                     whileTap={{ scale: 1.1 }}
                   >
-                    <FaEdit />
+                    <GrEdit />
                   </motion.div>
                 )}
               </div>
@@ -708,7 +715,7 @@ const User = ({ edit }) => {
                       }}
                       whileTap={{ scale: 1.1 }}
                     >
-                      <FaEdit />
+                      <GrEdit />
                     </motion.div>
                   )}
                 </div>
@@ -723,14 +730,14 @@ const User = ({ edit }) => {
                     }
                     whileTap={{ scale: 1.1 }}
                   >
-                    <FaEdit />
+                    <GrEdit />
                   </motion.div>
                 )}
               </div>
             </div>
             <div className="top-buttons">
               <div className="buttons-follow">
-                <button>Follow</button>
+                <button>Connect me</button>
               </div>
               <div className="buttons-message">
                 <button>Message</button>
@@ -765,7 +772,7 @@ const User = ({ edit }) => {
                       }
                       whileTap={{ scale: 1.1 }}
                     >
-                      <FaEdit />
+                      <GrEdit />
                     </motion.div>
                   )}
                   <h1>{d.name}</h1>
@@ -774,14 +781,14 @@ const User = ({ edit }) => {
               ))}
             </motion.div>
 
-            {!edit && JSON.parse(localStorage.getItem("UserAuth")) && (
+            {/* {!edit && JSON.parse(localStorage.getItem("UserAuth")) && (
               <div className="connectme__user-like">
                 <div className="like__button" onClick={likeHandler}>
                   {isUserLikeProfile ? <FcLike /> : <FcLikePlaceholder />}
                   <h3>{isUserLikeProfile ? "Dislike" : "Like"} This Profile</h3>
                 </div>
               </div>
-            )}
+            )} */}
 
             <div className="connectme__user-social">
               <div className="connectme__user-social__title">
@@ -942,7 +949,11 @@ const User = ({ edit }) => {
                         <MdDelete />
                       </div>
                     )}
+                    <div className="badges-div">
+                      <Image src={badge} />
+                    </div>
                     <p>{d.data}</p>
+                    
                     {edit && (
                       <div
                         className="background"
@@ -1008,7 +1019,7 @@ const User = ({ edit }) => {
                 <BorderComp />
                 <div className="connectme__user-personal">
                   <div className="personal-info-img">
-                    <img src={PerosnalImg} alt="img" srcset="" />
+                    <Image src={PerosnalImg} alt="img"/>
                   </div>
                   <div className="connectme__user-personal__title">
                     <h1>Personal Info</h1>
@@ -1146,7 +1157,7 @@ const User = ({ edit }) => {
                 </div>
                 <div className="connectme__user-footer__right-section">
                   <div className="text">
-                    <h1>Create your own profile</h1>
+                    <h1>New profile</h1>
                   </div>
                   <div className="content">
                     <Link href={"login?signup=true"} passHref>
@@ -1205,10 +1216,11 @@ const User = ({ edit }) => {
           )}
           {/* <BorderComp /> */}
 
+          <BorderComp />
           <div className="connectme__user-feedback">
 
 <div className="powered-by-icon">
-  <h1>Powered by</h1>
+  <h2>Powered by</h2>
   <Image src={footerIcon}/>
 </div>
            <div className="footer-buttons">

@@ -569,6 +569,11 @@ A {
   background: none;
   box-shadow: none;
 }
+.connectme__user-profile .profile-image {
+  background-color: #007aff;
+  border-radius: 15rem;
+  padding: 5px 10px 0px 10px;
+}
 .connectme__user-profile img {
   border-radius: 15rem;
 }
@@ -599,6 +604,9 @@ A {
   .connectme__user-profile img {
     border-radius: 5rem;
   }
+  .connectme__user-profile .profile-image {
+    padding: 5px 5px 0px 5px;
+  }
 }
 .connectme__user .lower__sec {
   margin-top: -3rem;
@@ -609,22 +617,6 @@ A {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.connectme__user-like .like__button {
-  padding: 0.7rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #3080c0 !important;
-  color: #fff !important;
-  border-radius: 5px;
-}
-.connectme__user-like .like__button:hover {
-  color: #3080c0 !important;
-  background-color: #fff !important;
-  border: 1px solid black;
-  transition: all 0.1s ease-in;
 }
 .connectme__user-like .like__button svg {
   font-size: 2rem;
@@ -640,8 +632,6 @@ A {
   border-radius: 10px;
   background: #EA6601;
   padding: 1rem 10rem;
-  width: 60rem;
-  margin-left: 8rem;
 }
 .connectme__user-detail .background {
   width: 1rem;
@@ -866,6 +856,7 @@ A {
   border-radius: 10px;
   box-shadow: 6px 6px 12px #e0dee0, -6px -6px 12px #dcdcdc;
   padding: 1rem;
+  border: 2px solid orangered;
   font-family: "Poppins", sans-serif;
   color: rgb(5, 5, 5);
 }
@@ -881,7 +872,7 @@ A {
 }
 .connectme__user-about .background svg {
   font-size: 1.3rem;
-  margin-left: 0.4rem;
+  margin-left: 18rem;
 }
 .connectme__user-interests__title {
   display: flex;
@@ -919,7 +910,7 @@ A {
   margin-top: 2rem;
   box-shadow: 6px 6px 12px #e0dee0, -6px -6px 12px #dcdcdc;
   border-radius: 10px;
-  padding: 20px;
+  padding: 70px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -932,7 +923,7 @@ A {
   color: black;
 }
 .connectme__user-interests__info .bodies {
-  flex: 0 0 calc(16.66% - 20px);
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -941,6 +932,19 @@ A {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   color: rgb(0, 0, 0);
+}
+.connectme__user-interests__info .bodies .badges-div {
+  position: absolute;
+  width: 15rem;
+}
+@media screen and (max-width: 560px) {
+  .connectme__user-interests__info .bodies .badges-div {
+    position: absolute;
+    width: 13rem;
+  }
+}
+.connectme__user-interests__info::-webkit-scrollbar {
+  display: none; /* Hide scrollbar*/
 }
 .connectme__user-testimonial {
   margin-top: 7rem;
@@ -1253,6 +1257,11 @@ A {
   font-size: 1.4rem;
 }
 .connectme__user-services__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
   margin-top: 2rem;
   border-radius: 10px;
   box-shadow: 6px 6px 12px #e0dee0, -6px -6px 12px #dcdcdc;
@@ -1289,6 +1298,26 @@ A {
 }
 .connectme__user-services__more svg {
   font-size: 3rem;
+}
+.connectme__user-services .connectme__user-services__more p {
+  border-radius: 100px;
+  padding: 10px;
+  color: white;
+  background-color: #EA6601;
+  width: 8rem;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+@media screen and (max-width: 500px) {
+  .connectme__user-services .connectme__user-services__more p {
+    border-radius: 100px;
+    padding: 10px;
+    color: white;
+    background-color: #EA6601;
+    width: 8rem;
+    font-weight: 500;
+    margin-right: 0rem;
+  }
 }
 .connectme__user-personal {
   display: flex;
@@ -1452,7 +1481,7 @@ A {
   font-weight: 500;
   padding: 1rem;
   width: 15rem;
-  margin-left: 10rem;
+  margin-left: 2rem;
   margin-top: 3rem;
   cursor: pointer;
   color: white;
@@ -1462,9 +1491,15 @@ A {
   color: white;
   font-size: 1.5rem;
 }
+.connectme__user-footer .connectme__user-footer__right-section {
+  margin-right: 5rem;
+}
 @media screen and (max-width: 560px) {
   .connectme__user-footer .connectme__user-footer__left-section {
     max-width: 10rem;
+  }
+  .connectme__user-footer .connectme__user-footer__right-section {
+    margin-right: 1rem;
   }
   .connectme__user-footer .connectme__user-footer__right-section h1 {
     font-size: 1.5rem;
@@ -1477,11 +1512,9 @@ A {
     width: 8rem;
     font-weight: 500;
     margin-top: 1.5rem;
-    margin-left: 2.5rem;
+    margin-left: 0rem;
     padding: 0.5rem;
     width: 10rem;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
   }
   .connectme__user-footer .connectme__user-footer__right-section .content__button h1 {
     cursor: pointer;
@@ -1494,8 +1527,12 @@ A {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 15rem;
-  margin-top: 4rem;
+  gap: 8rem;
+  margin-top: 6rem;
+}
+.connectme__user-feedback .footer-buttons {
+  display: flex;
+  gap: 10rem;
 }
 .connectme__user-feedback .feedback {
   display: flex;
@@ -1515,6 +1552,12 @@ A {
 .connectme__user-feedback .feedback h3 {
   margin-left: 1rem;
 }
+.connectme__user-feedback .powered-by-icon {
+  width: 100%;
+}
+.connectme__user-feedback .powered-by-icon h2 {
+  margin-bottom: 2rem;
+}
 @media screen and (max-width: 560px) {
   .connectme__user-feedback {
     margin-top: 2rem;
@@ -1523,6 +1566,7 @@ A {
   .connectme__user-feedback .footer-buttons {
     display: flex;
     gap: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
     width: 100%;
   }
   .connectme__user-feedback .footer-buttons .feedback {
@@ -1530,15 +1574,11 @@ A {
     width: 8rem;
   }
   .connectme__user-feedback .footer-buttons .feedback h3 {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     margin-left: 0rem;
   }
   .connectme__user-feedback .powered-by-icon {
-    background-color: #171616;
-    width: 100%;
-  }
-  .connectme__user-feedback .powered-by-icon h1 {
-    color: white;
+    width: 50%;
   }
 }
 .connectme__user-request {
@@ -1934,6 +1974,7 @@ A {
 .connectme__edit {
   position: fixed;
   height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1568627451);
   width: 100%;
   top: 50%;
   left: 50%;
@@ -1953,11 +1994,11 @@ A {
 }
 .connectme__edit-modal {
   position: absolute;
-  background: black;
+  background: rgb(251, 254, 255);
   color: white;
   top: 50%;
   width: 25rem;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   border-radius: 5px;
   transform: translate(-50%, -50%) !important;
   left: 50%;
@@ -1973,6 +2014,12 @@ A {
   font-size: 1rem;
 }
 .connectme__edit-modal .uploader_button {
+  border-radius: 100px;
+  padding: 10px;
+  color: white;
+  background-color: #EA6601;
+  width: 8rem;
+  font-weight: 500;
   padding: 0.1rem 1rem;
   background: white;
   color: black;
@@ -1991,14 +2038,16 @@ A {
   margin-bottom: 2rem;
 }
 .connectme__edit-modal .content {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .connectme__edit-modal .content textarea {
   width: 100%;
-  font-size: 1.1rem;
-  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
 }
 .connectme__edit-modal .content-array {
   display: flex;
@@ -2032,6 +2081,12 @@ A {
   align-items: center;
 }
 .connectme__edit-modal .button button {
+  border-radius: 100px;
+  padding: 10px;
+  color: white;
+  background-color: #EA6601;
+  width: 8rem;
+  font-weight: 500;
   width: 50%;
   font-size: 1.3rem;
   /* height: 1.5rem; */
@@ -2453,9 +2508,6 @@ A {
 .connectme__footer svg {
   font-size: 2rem;
 }
-.connectme__footer-request svg path {
-  fill: springgreen !important;
-}
 .connectme__footer-request .notify {
   padding: 0.2rem;
   font-size: 0.8rem;
@@ -2501,7 +2553,7 @@ A {
 }
 @media screen and (max-width: 600px) {
   .navbar-icons {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }
 
